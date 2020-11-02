@@ -1,4 +1,9 @@
 import React from "react";
+import { AiOutlineDelete } from "react-icons/ai";
+import { AiFillCheckSquare } from "react-icons/ai";
+import { AiOutlineBorder } from "react-icons/ai";
+import { AiOutlineBulb } from "react-icons/ai";
+import { AiTwotoneBulb } from "react-icons/ai";
 
 export const Note = (props) => {
   const {
@@ -18,8 +23,12 @@ export const Note = (props) => {
     gridTemplateColumns: "85% 5% 5% 5%",
     marginTop: "10px",
     borderRadius: "15px",
-    justifyItems: "left",
-    background: activeStatus ? "lightgreen" : "grey",
+    justifyItems: "center",
+    background: completeStatus
+      ? "yellow"
+      : activeStatus
+      ? "lightgreen"
+      : "grey",
   };
 
   return (
@@ -32,15 +41,16 @@ export const Note = (props) => {
       >
         {text}
       </div>
-      <button className="note-button" onClick={() => activeToggleClick(id)}>
-        A
-      </button>
-      <button className="note-button" onClick={() => completeToggleClick(id)}>
-        C
-      </button>
-      <button className="note-button" onClick={() => removeClick(id)}>
-        X
-      </button>
+
+      <AiOutlineBulb onClick={() => activeToggleClick(id)} />
+
+      {completeStatus ? (
+        <AiFillCheckSquare onClick={() => completeToggleClick(id)} />
+      ) : (
+        <AiOutlineBorder onClick={() => completeToggleClick(id)} />
+      )}
+
+      <AiOutlineDelete onClick={() => removeClick(id)} />
     </div>
   );
 };
