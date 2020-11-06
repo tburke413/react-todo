@@ -52,7 +52,7 @@ function App() {
         justifyContent: "center",
       }}
     >
-      <div className="App">
+      <div>
         <Header />
         <AddNoteBar submitNewNote={addNote} />
         {state.map((n) => {

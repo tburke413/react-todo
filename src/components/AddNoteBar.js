@@ -1,5 +1,8 @@
 import React from "react";
 import { v4 as uuidv4 } from "uuid";
+import { Button } from "@material-ui/core";
+import { TextField } from "@material-ui/core";
+
 export const AddNoteBar = (props) => {
   const { submitNewNote } = props;
   let newNoteText = {};
@@ -13,15 +16,18 @@ export const AddNoteBar = (props) => {
   return (
     <>
       <div className="addnote-box" style={style}>
-        <input
-          style={{ borderRadius: "5px", width: "500px" }}
+        <TextField
+          variant="outlined"
+          label="Create New Note"
+          style={{ width: "500px" }}
           id="noteInput"
           type="text"
-          placeholder="Add note"
+          placeholder="Note text"
           onChange={(e) => (newNoteText = { note: e.target.value })}
         />
-        <button
-          style={{ borderRadius: "5px" }}
+        <Button
+          variant="outlined"
+          style={{ background: "lightgrey" }}
           onClick={() => {
             newNoteText = {
               ...newNoteText,
@@ -33,7 +39,7 @@ export const AddNoteBar = (props) => {
           }}
         >
           Submit
-        </button>
+        </Button>
       </div>
     </>
   );

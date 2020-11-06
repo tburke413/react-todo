@@ -1,9 +1,1 @@
 @import url("https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap");
-
-.header {
-  display: grid;
-  justify-content: center;
-  margin-top: 50px;
-  font-family: "Henny Penny", cursive;
-  font-size: 54px;
-}

@@ -3,7 +3,6 @@ import { AiOutlineDelete } from "react-icons/ai";
 import { AiFillCheckSquare } from "react-icons/ai";
 import { AiOutlineBorder } from "react-icons/ai";
 import { AiOutlineBulb } from "react-icons/ai";
-import { AiTwotoneBulb } from "react-icons/ai";
 
 export const Note = (props) => {
   const {
@@ -24,11 +23,7 @@ export const Note = (props) => {
     marginTop: "10px",
     borderRadius: "15px",
     justifyItems: "center",
-    background: completeStatus
-      ? "yellow"
-      : activeStatus
-      ? "lightgreen"
-      : "grey",
+    background: completeStatus ? "gold" : activeStatus ? "lightgreen" : "grey",
   };
 
   return (
